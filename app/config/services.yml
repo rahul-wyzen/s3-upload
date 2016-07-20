@@ -1,0 +1,13 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+#    service_name:
+#        class: AppBundle\Directory\ClassName
+#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+    ct_file_store.s3:
+        class: AmazonS3
+        arguments:
+            options: { key: %aws_key%, secret: %aws_secret_key% }
